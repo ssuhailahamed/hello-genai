@@ -12,7 +12,7 @@ COPY src ./src
 RUN cargo build --release
 
 # Final stage
-FROM debian:bookworm-slim
+FROM debian:13.3-slim
 WORKDIR /app
 # Install curl for healthcheck and ca-certificates for HTTPS
 RUN apt-get update && apt-get install -y curl ca-certificates && rm -rf /var/lib/apt/lists/*
